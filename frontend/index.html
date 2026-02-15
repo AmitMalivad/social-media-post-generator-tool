@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Content Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <header class="header">
+      <h1 class="title">Social Content Generator</h1>
+      <p class="tagline">Create platform-ready posts with one click</p>
+    </header>
+
+    <main class="main">
+      <section class="form-section card">
+        <h2>Project details</h2>
+        <form id="content-form" class="form">
+          <div class="form-row">
+            <label for="business_name">Business name</label>
+            <input type="text" id="business_name" name="business_name" required placeholder="e.g. Acme Studio">
+          </div>
+          <div class="form-row">
+            <label for="industry">Industry</label>
+            <input type="text" id="industry" name="industry" required placeholder="e.g. Fitness, Tech">
+          </div>
+          <div class="form-row">
+            <label for="target_audience">Target audience</label>
+            <input type="text" id="target_audience" name="target_audience" required placeholder="e.g. Working professionals 25–40">
+          </div>
+          <div class="form-row">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required placeholder="e.g. New York">
+          </div>
+          <div class="form-row">
+            <label for="business_goal">Business goal</label>
+            <select id="business_goal" name="business_goal" required>
+              <option value="Leads">Leads</option>
+              <option value="Branding">Branding</option>
+              <option value="Sales">Sales</option>
+              <option value="Engagement">Engagement</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="tone">Tone</label>
+            <select id="tone" name="tone" required>
+              <option value="Professional">Professional</option>
+              <option value="Friendly">Friendly</option>
+              <option value="Bold">Bold</option>
+              <option value="Educational">Educational</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="number_of_posts">Number of posts</label>
+            <input type="number" id="number_of_posts" name="number_of_posts" min="1" max="30" value="3">
+          </div>
+          <div class="form-actions">
+            <button type="submit" id="submit-btn" class="btn btn-primary">Generate posts</button>
+          </div>
+        </form>
+      </section>
+
+      <div id="loading" class="loading card hidden" aria-hidden="true">
+        <div class="spinner"></div>
+        <p>Generating your posts…</p>
+      </div>
+
+      <div id="error" class="error card hidden" aria-hidden="true">
+        <p id="error-message"></p>
+      </div>
+
+      <section id="results" class="results hidden" aria-hidden="true">
+        <h2>Generated posts for <span id="results-business"></span></h2>
+        <div id="posts-container" class="posts-container"></div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

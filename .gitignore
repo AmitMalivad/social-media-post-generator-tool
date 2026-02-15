@@ -208,3 +208,5 @@ __marimo__/
 
 # Mac File
 .DS_Store
+
+.env
